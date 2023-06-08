@@ -1,24 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./styles.css">
-  <title>Tic-Tac-Toe</title>
-</head>
-<body>
-  <h1>Tic-Tac-Toes in the sand!☀️</h1>
- <div class="grid-container">
-   <div class="grid-square">1</div>
-   <div class="grid-square">2</div>
-   <div class="grid-square">3</div>
-   <div class="grid-square">4</div>
-   <div class="grid-square">5</div>
-   <div class="grid-square">6</div>
-   <div class="grid-square">7</div>
-   <div class="grid-square">8</div>
-   <div class="grid-square">9</div>
- </div>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Tic-Tac-Toe</title>
+  </head>
+  <body>
+    <section class="container player-one">
+      <h2>Player One🏄🏼‍♂️</h2>
+      <span role="img" aria-label="Man-surfing" title="man-surfing"></span>
+      <p id="playerOneWinCount">0 wins</p>
+    </section>
+    <main class="container">
+      <h1>Tic-Tac-Toes In The Sand☀️</h1>
+      <h2>Placeholder it's your turn!</h2>
+      <div class="game-board">
+        <div class="grid-container">
+          <div class="grid-square"></div>
+          <div class="grid-square"></div>
+          <div class="grid-square"></div>
+          <div class="grid-square"></div>
+          <div class="grid-square"></div>
+          <div class="grid-square"></div>
+          <div class="grid-square"></div>
+          <div class="grid-square"></div>
+          <div class="grid-square"></div>
+        </div>
+      </div>
+    </main>
+    <section class="container player-two">
+      <h2>Player Two 🌊</h2>
+      <span role="img" aria-label="Water-wave" title="water-wave"></span>
+      <p id="playerTwoWinCount">0 wins</p>
+    </section>
+  </body>
+  <script type="text/javascript" src="main.js"></script>
 </html>
