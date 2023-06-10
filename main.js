@@ -53,3 +53,12 @@ function gameBoardData() {
   return board;
 }
 
+function placeToken(event) {
+  var clickSquare = Array.from(gridSquares).indexOf(event.target);
+  if (gameBoard[clickSquare] === "") {
+    gameBoard[clickSquare] = currentPlayer.token;
+    event.target.textContent = currentPlayer.token;
+
+    currentPlayer = (currentPlayer === playerOne) ? playerTwo : playerOne;
+  }
+}
