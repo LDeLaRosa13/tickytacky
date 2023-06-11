@@ -13,15 +13,8 @@ body {
   display: flex;
   padding-left: 160px;
   flex-direction: column;
-  /* justify-content: center; */
+  justify-content: center;
 }
-
-.player {
-  /* justify-content: center; */
-  /* align-items: center; */
-}
-
-
 
 .main {
   display: flex;
@@ -38,10 +31,16 @@ h1 {
 h2 {
   text-align: center;
 }
+ .player {
 
-.container {
-  border: 2px solid;
-}
+  color: lightcoral;
+  text-decoration: underline;
+ }
+
+ #playerOneWinCount, #playerTwoWinCount {
+  color: white;
+  font-size: xx-large;
+ }
 
 .game-board {
   display: flex;
@@ -54,15 +53,18 @@ h2 {
 
 .grid-container {
   display: grid;
-  justify-items: center;
   grid-template-columns: auto auto auto;
   grid-gap: 5px;
-  background-color: lightblue;
   padding: 10px;
+  margin: 115px;
 }
 
 .grid-square {
   width: 100px;
   height: 100px;
   background-color: white;
+  font-size: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center
 }
