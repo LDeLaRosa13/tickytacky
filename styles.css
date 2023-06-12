@@ -11,13 +11,10 @@ body {
 
 .player-one, .player-two {
   display: flex;
-  border: orange solid;
   padding-left: 160px;
   flex-direction: column;
-  justify-content: center
+  justify-content: center;
 }
-
-
 
 .main {
   display: flex;
@@ -27,8 +24,6 @@ body {
   height: 100vh;
 }
 
-
-
 h1 {
   text-align: center;
 }
@@ -36,16 +31,20 @@ h1 {
 h2 {
   text-align: center;
 }
+ .player {
 
+  color: lightcoral;
+  text-decoration: underline;
+ }
 
-.container {
-  border: 2px solid;
-}
+ #playerOneWinCount, #playerTwoWinCount {
+  color: white;
+  font-size: xx-large;
+ }
 
 .game-board {
   display: flex;
   justify-content: center;
-  border: black solid;
   margin: 0 auto;
   width: 300px;
   padding-left: 80px;
@@ -54,18 +53,18 @@ h2 {
 
 .grid-container {
   display: grid;
-  justify-items: center;
   grid-template-columns: auto auto auto;
   grid-gap: 5px;
-  background-color: lightblue;
   padding: 10px;
+  margin: 115px;
 }
 
 .grid-square {
   width: 100px;
   height: 100px;
   background-color: white;
-  /* border: 1px solid rgba(0, 0, 0, 0.8);
-  padding: 20px;
-  margin: 5px; */
+  font-size: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center
 }
