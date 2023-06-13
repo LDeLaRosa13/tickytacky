@@ -34,16 +34,6 @@ var currentPlayer = playerOne;
 var gameBoard = ["", "", "", "", "", "", "", "", ""];
 var isGameOver = false;
 var playerOnStart = playerOne;
-var winningCombos = [
-  [0, 1, 2],
-  [3, 4, 5],
-  [6, 7, 8],
-  [0, 3, 6],
-  [1, 4, 7],
-  [2, 5, 8],
-  [0, 4, 8],
-  [2, 4, 6],
-];
 
 // Functions
 function createPlayer(id, token) {
@@ -61,6 +51,16 @@ function increaseWins(player) {
 }
 
 function checkForWins(event) {
+  var winningCombos = [
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 4, 8],
+    [2, 4, 6],
+  ];
   for (var i = 0; i < winningCombos.length; i++) {
     var winCombo = winningCombos[i];
     var isWin = winCombo.every(function (position) {
@@ -138,9 +138,9 @@ function resetGame() {
       for (var i = 0; i < gridSquares.length; i++) {
         gridSquares[i].textContent = "";
       }
-      playerOnStart = 
+      currentPlayer = playerOnStart === playerOne ? playerTwo : playerOne;
+      playerOnStart = currentPlayer;
       displayCurrentPlayerTurn();
     }, 2000);
   }
 }
-
