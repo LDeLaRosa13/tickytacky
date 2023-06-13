@@ -6,8 +6,12 @@ var gridSquares = document.querySelectorAll(".grid-square");
 var playerMessage = document.getElementById("playerMessage");
 
 // EventListeners
+window.addEventListener("load", function(event) {
+  displayCurrentPlayerTurn();
+});
 gridContainer.addEventListener("click", function (event) {
-  if (valid(event)) {
+  displayCurrentPlayerTurn()
+  if (checkValidMove(event)) {
     placeToken(event);
     switchPlayer();
   }
@@ -49,7 +53,7 @@ function createPlayer(id, token) {
 }
 
 function increaseWins(player) {
-  player.wins += 1;
+  player.wins++;
 }
 
 function checkForWins(event) {
@@ -65,7 +69,7 @@ function checkForWins(event) {
 
     if (playerOneWin) {
       playerOne.wins += 1;
-      playerOneWins.innerText = playerOne.wins + "wins";
+      playerOneWins.innerText = playerOne.wins + " " + "wins";
       playerMessage.innerText = "Player One Wins!!";
       // isGameOver = true
       return true;
@@ -106,9 +110,9 @@ function placeToken(event) {
 
 function displayCurrentPlayerTurn() {
   if (currentPlayer === playerOne) {
-    playerMessage.innerText = `It\'s ${playerOne.token}\'s turn!`;
-  } else {
     playerMessage.innerText = `It\'s ${playerTwo.token}\'s turn!`;
+  } else {
+    playerMessage.innerText = `It\'s ${playerOne.token}\'s turn!`;
   }
 }
 
@@ -124,6 +128,7 @@ function detectDraw() {
   }
   return true;
 }
+
 function checkValidMove(event) {
   var gridNumber = parseInt(event.target.id);
   if (gameBoard[gridNumber] === "") {
@@ -132,3 +137,20 @@ function checkValidMove(event) {
     return false;
   }
 }
+
+function resetGame() {
+  if (checkForWins() === true || detectDraw() === true) {
+    setTimeout(function() {
+      gameBoard = ["", "", "", "", "", "", "", "", ""];
+      playerOne.moves = []
+      playerTwo.moves = []
+      for (var i = 0; i <gridSquares.length; i ++) {
+        gridSquares[i].textContent = ""
+      }
+    }, 2000)
+  }
+}
+
+// if game has been won, disable any future clicks from adding wins to wincount
+// ALSO dont allow more tokens to be placed once a win has occured
+// also also reset the game 4000ms after game win
