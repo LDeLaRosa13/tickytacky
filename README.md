@@ -5,7 +5,6 @@ Tic-Tac-Toe
 
 - the ability to generate a new game on page load
 - the ability to switch between each player at the start of each game
-- This application gives the user a space to 
 
 ### Installation Instructions:
 1. Go to https://github.com/LDeLaRosa13/tickytacky
